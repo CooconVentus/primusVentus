@@ -31,10 +31,10 @@ import {
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard';
-import Transitions from 'ui-component/extended/Transitions';
+import MainCard from '../../../../ui-component/cards/MainCard';
+import Transitions from '../../../../ui-component/extended/Transitions';
 import UpgradePlanCard from './UpgradePlanCard';
-import User1 from 'assets/images/users/user-round.svg';
+import User1 from '../../../../assets/images/users/user-round.svg';
 
 // assets
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
@@ -42,8 +42,8 @@ import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
 // ==============================|| PROFILE MENU ||============================== //
 
 const ProfileSection = () => {
-    const theme = useTheme();
-    const customization = useSelector((state) => state.customization);
+    const theme = useTheme<any>();
+    const customization = useSelector((state:any) => state.customization);
     const navigate = useNavigate();
 
     const [sdm, setSdm] = useState(true);
@@ -54,19 +54,19 @@ const ProfileSection = () => {
     /**
      * anchorRef is used on different componets and specifying one type leads to other components throwing an error
      * */
-    const anchorRef = useRef(null);
+    const anchorRef = useRef<any>(null);
     const handleLogout = async () => {
         console.log('Logout');
     };
 
-    const handleClose = (event) => {
+    const handleClose = (event:any) => {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
             return;
         }
         setOpen(false);
     };
 
-    const handleListItemClick = (event, index, route = '') => {
+    const handleListItemClick = (event:any, index:any, route = '') => {
         setSelectedIndex(index);
         handleClose(event);
 

@@ -10,11 +10,11 @@ import NavCollapse from '../NavCollapse';
 
 // ==============================|| SIDEBAR MENU LIST GROUP ||============================== //
 
-const NavGroup = ({ item }) => {
-    const theme = useTheme();
+const NavGroup = ({ item }:any) => {
+    const theme = useTheme<any>();
 
     // menu list collapse & items
-    const items = item.children?.map((menu) => {
+    const items = item.children?.map((menu:any) => {
         switch (menu.type) {
             case 'collapse':
                 return <NavCollapse key={menu.id} menu={menu} level={1} />;

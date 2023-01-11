@@ -22,13 +22,13 @@ import { IconSettings } from '@tabler/icons';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
-import SubCard from 'ui-component/cards/SubCard';
-import AnimateButton from 'ui-component/extended/AnimateButton';
-import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from 'store/actions';
-import { gridSpacing } from 'store/constant';
+import SubCard from '../../ui-component/cards/SubCard';
+import AnimateButton from '../../ui-component/extended/AnimateButton';
+import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from '../../store/actions';
+import { gridSpacing } from '../../store/constant';
 
 // concat 'px'
-function valueText(value) {
+function valueText(value:any) {
     return `${value}px`;
 }
 
@@ -37,7 +37,7 @@ function valueText(value) {
 const Customization = () => {
     const theme = useTheme();
     const dispatch = useDispatch();
-    const customization = useSelector((state) => state.customization);
+    const customization = useSelector((state:any) => state.customization);
 
     // drawer on/off
     const [open, setOpen] = useState(false);
@@ -47,7 +47,7 @@ const Customization = () => {
 
     // state - border radius
     const [borderRadius, setBorderRadius] = useState(customization.borderRadius);
-    const handleBorderRadius = (event, newValue) => {
+    const handleBorderRadius = (event:any, newValue:any) => {
         setBorderRadius(newValue);
     };
 

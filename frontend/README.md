@@ -44,3 +44,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Install -- 추가사항
+
+You can install node.modules 
+
+### `npm install`
+
+Trouble 1. If you have 'Could not resolve dependency' error 
+
+### `npm install --legacy-peer-deps`

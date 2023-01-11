@@ -19,7 +19,7 @@ import { SET_MENU } from '../../store/actions';
 import { IconChevronRight } from '@tabler/icons';
 
 // styles
-const Main = styled('main', { shouldForwardProp: (prop:any) => prop !== 'open' })(({ theme, open }:any) => ({
+const Main:any = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }:any) => ({
     ...theme.typography.mainContent,
     ...(!open && {
         borderBottomLeftRadius: 0,
@@ -65,11 +65,11 @@ const Main = styled('main', { shouldForwardProp: (prop:any) => prop !== 'open' }
 // ==============================|| MAIN LAYOUT ||============================== //
 
 const MainLayout = () => {
-    const theme:any = useTheme();
+    const theme = useTheme<any>();
     const matchDownMd = useMediaQuery(theme.breakpoints.down('lg'));
 
     // Handle left drawer
-    const leftDrawerOpened:any = useSelector((state:any) => state.customization.opened);
+    const leftDrawerOpened = useSelector((state:any) => state.customization.opened);
     const dispatch = useDispatch();
     const handleLeftDrawerToggle = () => {
         dispatch({ type: SET_MENU, opened: !leftDrawerOpened });

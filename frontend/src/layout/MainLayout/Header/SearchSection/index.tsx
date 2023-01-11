@@ -9,7 +9,7 @@ import { Avatar, Box, ButtonBase, Card, Grid, InputAdornment, OutlinedInput, Pop
 import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 
 // project imports
-import Transitions from 'ui-component/extended/Transitions';
+import Transitions from '../../../../ui-component/extended/Transitions';
 
 // assets
 import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons';
@@ -45,7 +45,7 @@ const OutlineInputStyle = styled(OutlinedInput, { shouldForwardProp })(({ theme 
     }
 }));
 
-const HeaderAvatarStyle = styled(Avatar, { shouldForwardProp })(({ theme }) => ({
+const HeaderAvatarStyle = styled(Avatar, { shouldForwardProp })(({ theme }:any) => ({
     ...theme.typography.commonAvatar,
     ...theme.typography.mediumAvatar,
     background: theme.palette.secondary.light,
@@ -58,8 +58,8 @@ const HeaderAvatarStyle = styled(Avatar, { shouldForwardProp })(({ theme }) => (
 
 // ==============================|| SEARCH INPUT - MOBILE||============================== //
 
-const MobileSearch = ({ value, setValue, popupState }) => {
-    const theme = useTheme();
+const MobileSearch = ({ value, setValue, popupState }:any) => {
+    const theme = useTheme<any>();
 
     return (
         <OutlineInputStyle
