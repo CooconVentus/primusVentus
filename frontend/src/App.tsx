@@ -10,6 +10,7 @@ import themes from './themes';
 
 // project imports
 import NavigationScroll from './layout/NavigationScroll';
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     // @ts-ignore
@@ -18,9 +19,11 @@ function App() {
       <StyledEngineProvider injectFirst>
           <ThemeProvider theme={themes(customization)}>
               <CssBaseline />
-              <NavigationScroll>
-                  <Routes />
-              </NavigationScroll>
+              <BrowserRouter>
+                  <NavigationScroll>
+                        <Routes/>
+                  </NavigationScroll>
+              </BrowserRouter>
           </ThemeProvider>
       </StyledEngineProvider>
   );
